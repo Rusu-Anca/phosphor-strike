@@ -3,6 +3,6 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: './',
   build: { chunkSizeWarningLimit: 1000 },
-  server: { host: true, port: 5173 },
+  server: { host: true, port: 5173, allowedHosts: true },
   preview: { host: true, port: 4173 },
 });
