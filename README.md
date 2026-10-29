@@ -19,7 +19,8 @@ npm start        # serve dist/ with the Node server at http://localhost:3000
 | --- | --- |
 | Arrows / WASD | Move |
 | Space | Fire |
-| P | Pause |
+| P | Pause / resume |
+| Esc (while paused) | Quit to title screen |
 | M | Mute |
 | Touch | Drag to move, auto-fire |
 

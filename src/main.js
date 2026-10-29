@@ -690,6 +690,20 @@ function togglePause() {
   }
 }
 
+function quitGame() {
+  if (state.mode !== 'paused') return;
+  if (state.score > state.hi) {
+    state.hi = state.score;
+    localStorage.setItem(HI_KEY, String(state.hi));
+  }
+  [enemies, playerBullets, enemyBullets, powerups].forEach(clearList);
+  Object.assign(state, { mode: 'title', boss: null, shake: 0 });
+  player.alive = false;
+  setPlayerVisible(false);
+  banner.classList.remove('show');
+  showOverlay('title');
+}
+
 function canStart() {
   return state.mode === 'title' || (state.mode === 'gameover' && performance.now() - state.gameOverAt > 1200);
 }
@@ -701,7 +715,8 @@ window.addEventListener('keydown', (e) => {
   if (e.repeat) return;
   keys[e.code] = true;
   if ((e.code === 'Enter' || e.code === 'Space') && canStart()) startGame();
-  else if (e.code === 'KeyP' || e.code === 'Escape') togglePause();
+  else if (e.code === 'KeyP') togglePause();
+  else if (e.code === 'Escape') quitGame();
   else if (e.code === 'KeyM') sfx.toggleMute();
 });
 window.addEventListener('keyup', (e) => {
