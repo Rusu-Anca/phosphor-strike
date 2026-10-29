@@ -1,0 +1,168 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'VT323', monospace;
+  color: #6f8;
+}
+
+#game {
+  position: relative;
+  container-type: size;
+  text-shadow: 0 0 4px #3f6, 0 0 12px #1c5;
+}
+
+#game canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  padding: 3.5cqh 7cqw;
+  font-size: 4cqh;
+  letter-spacing: 0.1em;
+}
+
+#hud b {
+  font-weight: normal;
+  color: #bfc;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+.row.small {
+  font-size: 3.2cqh;
+  margin-top: 0.6cqh;
+  opacity: 0.85;
+}
+
+#bossbar {
+  margin: 1.5cqh auto 0;
+  width: 70%;
+  font-size: 2.6cqh;
+  text-align: center;
+}
+
+#bossbar .track {
+  height: 1.2cqh;
+  border: 1px solid #6f8;
+  box-shadow: 0 0 6px #3f6;
+  margin-top: 0.4cqh;
+}
+
+#bossfill {
+  height: 100%;
+  width: 100%;
+  background: #6f8;
+  box-shadow: 0 0 8px #3f6;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  font-size: 4cqh;
+  letter-spacing: 0.1em;
+}
+
+.overlay h1 {
+  font-size: 13cqh;
+  font-weight: normal;
+  line-height: 0.85;
+  margin: 0 0 5cqh;
+  color: #9fb;
+  text-shadow: 0 0 6px #3f6, 0 0 24px #1c5, 0 0 48px #0a3;
+}
+
+.overlay h2 {
+  font-size: 9cqh;
+  font-weight: normal;
+  margin: 0 0 3cqh;
+}
+
+.overlay p {
+  margin: 0.8cqh 0;
+}
+
+.help {
+  margin-top: 6cqh;
+  font-size: 3.2cqh;
+  opacity: 0.85;
+}
+
+.dim {
+  opacity: 0.6;
+}
+
+#banner {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 8cqh;
+  letter-spacing: 0.15em;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#banner.show {
+  animation: banner 2.2s ease-out forwards;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.blink {
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes banner {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#hud.title .row.small {
+  visibility: hidden;
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Phosphor Strike</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22black%22/%3E%3Cpath d=%22M16 4 L27 26 L16 20 L5 26 Z%22 fill=%22none%22 stroke=%22%2344ff77%22 stroke-width=%222%22/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="game">
+      <div id="hud">
+        <div class="row">
+          <span>SCORE <b id="score">000000</b></span>
+          <span>HI <b id="hi">000000</b></span>
+        </div>
+        <div class="row small">
+          <span id="lives"></span>
+          <span>WAVE <b id="wave">1</b></span>
+          <span id="weapon"></span>
+        </div>
+        <div id="bossbar" class="hidden">
+          <div class="label">MOTHERSHIP</div>
+          <div class="track"><div id="bossfill"></div></div>
+        </div>
+      </div>
+
+      <div id="banner"></div>
+
+      <div id="title" class="overlay">
+        <h1>PHOSPHOR<br />STRIKE</h1>
+        <p class="blink">PRESS ENTER TO START</p>
+        <div class="help">
+          <p>ARROWS / WASD &nbsp; MOVE</p>
+          <p>SPACE &nbsp; FIRE</p>
+          <p>P &nbsp; PAUSE &nbsp;&nbsp; M &nbsp; MUTE</p>
+          <p class="dim">TOUCH: DRAG TO MOVE, AUTO-FIRE</p>
+        </div>
+      </div>
+
+      <div id="paused" class="overlay hidden">
+        <h2>PAUSED</h2>
+        <p class="blink">PRESS P TO RESUME</p>
+      </div>
+
+      <div id="gameover" class="overlay hidden">
+        <h2>GAME OVER</h2>
+        <p>SCORE <span id="final">0</span></p>
+        <p id="newhi" class="hidden blink">NEW HIGH SCORE!</p>
+        <p class="blink">PRESS ENTER TO PLAY AGAIN</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
